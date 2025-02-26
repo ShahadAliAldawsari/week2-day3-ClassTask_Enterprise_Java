@@ -1,7 +1,7 @@
 import java.util.UUID;
 
 public class Product {
-    final private UUID productId;
+    final private UUID productId; //after it's generated it does not change
     private String name;
     private double price;
     private int stockLevel;
@@ -17,6 +17,8 @@ public class Product {
     }
 
     // add setters and getters
+
+    // this ID only has a getter (no setter) since it's generated automatically
     public UUID getProductId() {
         return productId;
     }
@@ -52,7 +54,6 @@ public class Product {
     public int getReorderThreshold () {
         return reorderThreshold;
     }
-
 
 
     // toString method for display

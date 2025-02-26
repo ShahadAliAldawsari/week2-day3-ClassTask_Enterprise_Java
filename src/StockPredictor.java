@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class StockPredictor {
 //    ○ Predicts when stock will run out based on average daily sales.
 //    ○ Suggests a restocking strategy.
+
+
     private Product product;
     private double averageDailySales;
 

@@ -4,7 +4,7 @@ enum Status{
     PENDING, SHIPPED, DELIVERED
 }
 public class Order {
-    final private UUID orderId;
+    final private UUID orderId; // after it's generated it does not change
     private String customerName;
     private UUID productId;
     private int quantity;
@@ -16,10 +16,11 @@ public class Order {
         this.customerName = customerName;
         this.productId = productId;
         this.quantity = quantity;
-        this.status = Status.PENDING;
+        this.status = Status.PENDING; // Automatically assigned to the first status "PENDING"
 
     }
 
+    // this ID only has a getter (no setter) since it's generated automatically
     public UUID getOrderId() {
         return orderId;
     }
@@ -48,20 +49,33 @@ public class Order {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    //Automatic status update
+//    public void updateStatus() {
+//        if (status == Status.PENDING) {
+//            this.status = Status.SHIPPED;
+//        } else if (status == Status.SHIPPED) {
+//            this.status = Status.DELIVERED;
+//        } else { //if (status == Status.DELIVERED)
+//            this.status = Status.PENDING;
+//        }
+//        System.out.println("Order " + orderId + " updated status to " + status);
+//    }
+
     public Status getStatus() {
         return status;
     }
-//
-//    @Override
-//    public String toString() {
-//        return "Order{" +
-//                "orderId=" + orderId +
-//                ", customerName='" + customerName + '\'' +
-//                ", productId=" + productId +
-//                ", quantity=" + quantity +
-//                ", orderStatus=" + status +
-//                '}';
-//    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
